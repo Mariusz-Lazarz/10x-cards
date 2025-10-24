@@ -15,3 +15,11 @@ alwaysApply: false
 - Implement useId() for generating unique IDs for accessibility attributes
 - Consider using the new useOptimistic hook for optimistic UI updates in forms
 - Use useTransition for non-urgent state updates to keep the UI responsive
+
+### Notifications with Sonner
+
+- Use `toast` from `sonner` for all user notifications (success, error, warning, info)
+- Never use native `alert()`, `confirm()` or custom error notification components
+- Always use `toast.loading()` with ID for async operations, then update with success/error
+- Provide descriptive messages with context (e.g., "Zapisano 5 fiszek!" not just "Sukces")
+- Example: `const loadingToast = toast.loading("Przetwarzanie..."); toast.success("Gotowe!", { id: loadingToast });`
